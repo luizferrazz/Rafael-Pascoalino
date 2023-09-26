@@ -10925,17 +10925,38 @@ p {
     margin-right: 0;
   }
 }
-header.masthead {
-  padding-top: 10.5rem;
-  padding-bottom: 6rem;
-  text-align: center;
-  color: #fff;
-  background-image: url("../assets/img/home-background.jpeg");
+
+header.masthead::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/img/our-space/office.jpeg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  opacity: 0.75; /* Defina o valor desejado para a transparência da imagem de fundo */
+  z-index: -1; /* Coloque o pseudo-elemento abaixo do conteúdo (texto) */
 }
+
+/* Estilos para o conteúdo (texto) no cabeçalho */
+header.masthead-content {
+  position: relative; /* Certifique-se de que o conteúdo tenha posição relativa */
+  z-index: 1; /* Certifique-se de que o conteúdo esteja acima do pseudo-elemento de fundo */
+  color: black; /* Cor do texto */
+}
+
+header.masthead {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  position: relative; /* Certifique-se de que o elemento pai tenha posição relativa */
+  /* Outros estilos do header.masthead */
+}
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: italic;
@@ -10956,6 +10977,7 @@ header.masthead .masthead-heading {
     padding-top: 17rem;
     padding-bottom: 12.5rem;
   }
+
   header.masthead .masthead-subheading {
     font-size: 2.25rem;
     font-style: italic;
